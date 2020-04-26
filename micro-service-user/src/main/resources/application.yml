@@ -1,0 +1,32 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: micro-service-user
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8090/eureka/
+
+  instance:
+    prefer-ip-address: true
+
+
+#脱离 eureka 使用 Ribbon 时可以如下配置，同样起到负载均衡的效果
+#micro-service-order:
+#  robbon:
+#    listOfServers: localhost:8092,localhost:8086
+logging:
+  level:
+    root: INFO
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+
+

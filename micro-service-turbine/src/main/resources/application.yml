@@ -1,0 +1,25 @@
+server:
+  port: 8095
+
+
+Spring:
+  application:
+    name: micro-service-hystrix-turbine
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin123
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8090/eureka/,http://admin:admin@localhost:8089/eureka/
+
+  instance:
+    prefer-ip-address: true
+
+#turbine:
+#  app-config: micro-service-user,micro-service-order
+#  cluster-name-expression: "'default'"

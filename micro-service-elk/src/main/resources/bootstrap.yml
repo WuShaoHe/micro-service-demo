@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: micro-service-elk
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+server:
+  port: 8098
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8090/eureka/
+
+  instance:
+    prefer-ip-address: true
+
+logging:
+  path: H:\Worckspace\micro-service-demo\micro-service-elk\src\logs
+  file: elk.log
+  level:
+    root: INFO
+    org.springframework.web.servlet.DispatcherServlet: DEBUG

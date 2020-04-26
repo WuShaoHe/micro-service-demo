@@ -1,0 +1,29 @@
+server:
+  port: 8092
+
+spring:
+  application:
+    name: micro-service-order
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+security:
+  basic:
+    enabled: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8090/eureka/,http://admin:admin@localhost:8089/eureka/
+
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web.servlet.DispatcherServlet: DEBUG

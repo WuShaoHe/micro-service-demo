@@ -1,0 +1,35 @@
+server:
+  port: 8096
+
+management:
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: micro-service-geteway-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8090/eureka/,http://admin:admin@localhost:8089/eureka/
+
+  instance:
+    prefer-ip-address: true
+
+
+zuul:
+  host:
+    connect-timeout-millis: 5000
+  routes:
+    api-a:
+      #  ** 可以匹配多个/ xx/xx
+      #  * 仅仅只能匹配单个/xxx
+      path: /api-a/**
+      serviceId: micro-service-api
+    api-b:
+      path: /api-b/**
+      serviceId: micro-service-api
+    api-c:
+      path: /api-c/**
+      serviceId: micro-service-api
